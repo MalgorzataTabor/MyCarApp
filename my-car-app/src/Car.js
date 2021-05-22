@@ -1,7 +1,7 @@
 import { Component } from "react";
 
 
-class Car extends Component{
+class Car extends Component {
 
 
     state = {
@@ -13,7 +13,7 @@ class Car extends Component{
 
         if (isNaN(parseInt(id, 10))) {
             this.setState({
-                car : {}
+                car: {}
             });
         }
         else {
@@ -23,11 +23,11 @@ class Car extends Component{
                     if (text) {
                         let car = JSON.parse(text);
 
-                        this.setState({car});
+                        this.setState({ car });
                     } else {
                         let car = {};
 
-                        this.setState({car});
+                        this.setState({ car });
                     }
                 });
         }
@@ -41,14 +41,33 @@ class Car extends Component{
                 </div>
             )
         }
+
         return (
-            <div>
-                <div>{this.state.car.id}</div>
-                <div>{this.state.car.mark}</div>
-                <div>{this.state.car.model}</div>
-                <div>{this.state.car.color}</div>
+            <div className="ShowCars">
+                <table cellPadding="25">
+                    <thead>
+                        <li>
+                            <th>Id</th>
+                            <th>Mark</th>
+                            <th>Model</th>
+                            <th>Color</th>
+                            
+                        </li>
+                    </thead>
+                    <tbody>
+                        <li>
+
+                            <td>{this.state.car.id}</td>
+                            <td>{this.state.car.mark}</td>
+                            <td>{this.state.car.model}</td>
+                            <td>{this.state.car.color}</td>
+                            
+                        </li>
+                    </tbody>
+                </table>
             </div>
         )
+
     }
 }
 

@@ -1,9 +1,13 @@
 import { Component } from "react";
 import ButtonDeleted from './ButtonDeleted';
-import ButtonEdit from './ButtonEdit'
+import { Link } from 'react-router-dom';
+
+
 
 
 class CarItem extends Component {
+
+
 
     render() {
 
@@ -16,8 +20,9 @@ class CarItem extends Component {
                 <td>{this.props.car.model}</td>
                 <td>{this.props.car.color}</td>
                 <td>
-                <ButtonEdit car={this.props.car}/>
-                <ButtonDeleted id={this.props.car.id}/>
+                <Link className="btn" to={`/cars/edit/${this.props.car.id}`}> Edit</Link>
+
+                <ButtonDeleted id={this.props.car.id} className="btn red right"/>
 
                     
                  
@@ -30,5 +35,7 @@ class CarItem extends Component {
     }
 
 }
+    
+
 
 export default CarItem; 

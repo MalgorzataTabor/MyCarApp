@@ -1,24 +1,22 @@
 
 
 import React from 'react';
-import Cars from "./Cars"; 
-import CarForm from "./CarForm";
+import Main from './Main';
+import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
-
-class App extends React.Component{
-    render() {
-        return (
-            <div>
-                <div className="Cars">
-                    <Cars/>
-                </div>
-                <div className="Car-form">
-                    <CarForm/>
-                </div>
-            </div>
-        );
-    }
-}
-
+const App = () => (
+    <div>
+        <Navbar />
+        <div className="container">
+            <Main />
+        </div>
+        <div className="fixed-action-btn">
+            <Link to="/cars/add" className="btn-floating btn-large red">
+                <i className="fa fa-plus"></i>
+            </Link>
+        </div>
+    </div>
+)
 
 export default App;

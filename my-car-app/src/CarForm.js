@@ -47,11 +47,14 @@ class CarForm extends Component {
             });
         });
     }
+    
 
     render() {
 
         let title = this.props.edit ? 'Edit car properties' : 'Add new car';
         let buttonText = this.props.edit ? 'Save' : 'Add new car';
+
+
 
         return (
             <form onSubmit={this.handleSubmit} class="form-style-5">
@@ -73,11 +76,9 @@ class CarForm extends Component {
                         onChange={this.handleChange} />
                 </div>
                 <div>
-                    <label>Color:
+                <label>Color: </label>
                     <input type={'text'} id={'color'} name={'color'} value={this.state.color}
                            onChange={this.handleChange}/>
-                    </label>
-                   
                 </div>
                 <div>
                     <button type={'submit'}>{buttonText}</button>
